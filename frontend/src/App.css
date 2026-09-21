@@ -1,0 +1,657 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1e3a5f;
+    padding: 16px 45px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-link {
+    color: white;
+    text-decoration: none;
+    padding: 11px 15px;
+    border-radius: 7px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.menu-link:hover {
+    background: #31577f;
+}
+
+.menu-link.active {
+    background: #3b6ea5;
+}
+
+.welcome {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   COMMON PAGE CONTAINER
+   ========================================================= */
+
+.page-container,
+.form-container,
+.details-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.page-header h1,
+.form-container h1,
+.details-container h1 {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    color: #1e3a5f;
+}
+
+.page-header p,
+.form-container > p,
+.details-container > p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ADD EMPLOYEE BUTTON
+   ========================================================= */
+
+.add-button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border: none;
+
+    padding: 12px 19px;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPLOYEE TABLE
+   ========================================================= */
+
+.table-container {
+    background: white;
+    border-radius: 12px;
+    overflow-x: auto;
+
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #eaf0f7;
+}
+
+th {
+    padding: 16px;
+    text-align: left;
+
+    color: #1e3a5f;
+    font-size: 14px;
+    font-weight: bold;
+
+    border-bottom: 2px solid #d9e2ec;
+}
+
+td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+   ========================================================= */
+
+.view-button,
+.edit-button,
+.delete-button {
+    display: inline-block;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 8px 12px;
+    margin-right: 6px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.view-button {
+    background: #16a34a;
+    color: white;
+}
+
+.view-button:hover {
+    background: #15803d;
+}
+
+.edit-button {
+    background: #f59e0b;
+    color: white;
+}
+
+.edit-button:hover {
+    background: #d97706;
+}
+
+.delete-button {
+    background: #dc2626;
+    color: white;
+}
+
+.delete-button:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   MESSAGE BOX
+   ========================================================= */
+
+.message-box {
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.message-box h2 {
+    margin-bottom: 10px;
+    color: #1e3a5f;
+}
+
+.message-box p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.error-message h2 {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+   ========================================================= */
+
+.form-container {
+    max-width: 650px;
+
+    background: white;
+
+    padding: 38px 40px;
+
+    border-radius: 13px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 28px;
+}
+
+.form-container label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 9px;
+
+    color: #374151;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-container input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-container input:read-only {
+    background: #f3f4f6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORM BUTTON GROUP
+   ========================================================= */
+
+.form-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   COMMON BUTTONS
+   ========================================================= */
+
+.submit-button,
+.cancel-button,
+.delete-button-large,
+.back-button {
+    border: none;
+    border-radius: 7px;
+
+    padding: 12px 19px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.submit-button {
+    background: #2563eb;
+    color: white;
+}
+
+.submit-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.cancel-button {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.cancel-button:hover {
+    background: #d1d5db;
+}
+
+.delete-button-large {
+    background: #dc2626;
+    color: white;
+}
+
+.delete-button-large:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.back-button {
+    margin-top: 28px;
+
+    background: #6b7280;
+    color: white;
+}
+
+.back-button:hover {
+    background: #4b5563;
+}
+
+
+/* =========================================================
+   UPDATE PAGE
+   Employee ID + Load + Cancel
+   ========================================================= */
+
+.form-container > div {
+    margin-top: 22px;
+}
+
+.form-container > div > label {
+    display: block;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.form-container > div > input {
+    display: block;
+
+    margin-bottom: 16px;
+}
+
+.form-container > div > button {
+    margin-top: 0;
+}
+
+.form-container > div > button + button {
+    margin-left: 12px;
+}
+
+.form-container > div > .submit-button {
+    min-width: 165px;
+}
+
+.form-container > div > .cancel-button {
+    min-width: 90px;
+}
+
+
+/* =========================================================
+   DELETE PAGE
+   Employee ID + Delete + Cancel
+   ========================================================= */
+
+.form-container > label {
+    display: block;
+
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.form-container > input {
+    display: block;
+
+    margin-bottom: 18px;
+}
+
+.form-container > .delete-button-large,
+.form-container > .cancel-button {
+    margin-top: 0;
+}
+
+.form-container > .delete-button-large + .cancel-button {
+    margin-left: 12px;
+}
+
+
+/* =========================================================
+   DELETE WARNING
+   ========================================================= */
+
+.delete-warning {
+   
+     display: block;
+    clear: both;
+
+    margin-top: 25px !important;
+
+    padding: 7px 12px;
+
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 6px;
+
+    color: #c2410c;
+    font-size: 14px;
+    line-height: 1.2;
+    
+}
+
+
+/* =========================================================
+   EMPLOYEE DETAILS
+   ========================================================= */
+
+.details-container {
+    max-width: 750px;
+}
+
+.details-card {
+    background: white;
+
+    margin-top: 28px;
+
+    padding: 10px 28px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row strong {
+    color: #374151;
+}
+
+.detail-row span {
+    color: #111827;
+}
+
+.details-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.details-actions .back-button {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 50px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .page-container,
+    .form-container,
+    .details-container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .form-container {
+        padding: 25px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-link {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+
+    .details-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .details-actions a,
+    .details-actions button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    /* Update page buttons */
+    .form-container > div > button {
+        margin-bottom: 8px;
+    }
+
+    .form-container > div > button + button {
+        margin-left: 0;
+    }
+
+    /* Delete page buttons */
+    .form-container > .delete-button-large,
+    .form-container > .cancel-button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .form-container > .delete-button-large + .cancel-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
