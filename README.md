@@ -15,6 +15,7 @@ The Employee Portal allows users to:
 ## Technologies Used
 
 ### Frontend
+
 - React.js
 - React Router
 - Axios
@@ -23,6 +24,7 @@ The Employee Portal allows users to:
 - JavaScript
 
 ### Backend
+
 - Java
 - Spring Boot
 - Spring Data JPA
@@ -30,11 +32,19 @@ The Employee Portal allows users to:
 - Maven
 
 ### Database
+
 - MySQL
+
+### Development Tools
+
+- Eclipse IDE
+- Visual Studio Code
+- Git
+- GitHub
 
 ## Employee Details
 
-The application manages:
+The application manages the following employee information:
 
 - Employee ID (`eid`)
 - Employee Name (`ename`)
@@ -61,16 +71,22 @@ Employee Portal
 ├── Backend - Spring Boot
 │   ├── src
 │   │   ├── main
-│   │   │   └── java
-│   │   │       └── com.vcube.empportal
-│   │   │           ├── controller
-│   │   │           ├── model
-│   │   │           ├── repo
-│   │   │           ├── service
-│   │   │           └── EmpportalApplication.java
+│   │   │   ├── java
+│   │   │   │   └── com.vcube.empportal
+│   │   │   │       ├── controller
+│   │   │   │       ├── model
+│   │   │   │       ├── repo
+│   │   │   │       ├── service
+│   │   │   │       └── EmpportalApplication.java
+│   │   │   │
+│   │   │   └── resources
+│   │   │       └── application.properties
+│   │   │
 │   │   └── test
+│   │
 │   ├── pom.xml
-│   └── mvnw
+│   ├── mvnw
+│   └── mvnw.cmd
 │
 └── Frontend - React
     ├── public
@@ -82,11 +98,69 @@ Employee Portal
     │   │   ├── EmployeeDetails.js
     │   │   ├── EditEmployee.js
     │   │   └── DeleteEmployee.js
+    │   │
     │   ├── api.js
     │   ├── App.js
-    │   └── App.css
+    │   ├── App.css
+    │   └── index.js
+    │
     ├── package.json
     └── package-lock.json
+```
+
+## Backend Configuration
+
+The Spring Boot backend uses the following configuration file:
+
+```text
+src/main/resources/application.properties
+```
+
+The application uses:
+
+- MySQL database
+- Spring Data JPA
+- Port `9999`
+
+The database username, password, and other configuration details should be configured according to the local MySQL setup.
+
+## How the Application Works
+
+The application works in the following way:
+
+```text
+User
+  ↓
+React.js Frontend
+  ↓
+Axios
+  ↓
+Spring Boot REST API
+  ↓
+Spring Data JPA
+  ↓
+MySQL Database
+```
+
+## CRUD Operations
+
+The application supports the following CRUD operations:
+
+### Create
+
+Add a new employee to the database.
+
+### Read
+
+View all employees or view an individual employee.
+
+### Update
+
+Update existing employee information.
+
+### Delete
+
+Delete an employee from the database.
 
 ## How to Run the Project
 
@@ -98,13 +172,17 @@ Employee Portal
 
 3. Configure the MySQL database in:
 
-`src/main/resources/application.properties`
+```text
+src/main/resources/application.properties
+```
 
 4. Run the Spring Boot application.
 
-Backend URL:
+The backend will run on:
 
-`http://localhost:9999`
+```text
+http://localhost:9999
+```
 
 ### Frontend - React
 
@@ -116,60 +194,51 @@ Backend URL:
 
 ```bash
 npm install
+```
 
+4. Start the React application:
 
-Start the React application:
-'''bash
+```bash
 npm start
+```
 
-Frontend URL:
+The frontend will run on:
 
+```text
 http://localhost:3000
+```
 
-How the Application Works
+## Database
 
-The application works in the following way:
+The application uses **MySQL** to store employee information.
 
-React.js Frontend
-↓
-Axios
-↓
-Spring Boot REST API
-↓
-Spring Data JPA
-↓
-MySQL Database
+Employee fields include:
 
-CRUD Operations
-Create Employee
-View Employee
-Update Employee
-Delete Employee
-Database
+- Employee ID (`eid`)
+- Employee Name (`ename`)
+- Salary (`salary`)
+- Age (`age`)
+- City (`city`)
+- State (`state`)
 
-The application uses MySQL to store employee information.
-
-Employee fields:
-
-Employee ID (eid)
-Employee Name (ename)
-Salary (salary)
-Age (age)
-City (city)
-State (state)
-Important Note
+## Important Note
 
 The Spring Boot backend must be running before using the React frontend.
 
 Make sure:
 
-MySQL is running
-Spring Boot is running on port 9999
-React is running on port 3000
+- MySQL is running
+- Spring Boot is running on port `9999`
+- React is running on port `3000`
+
+## Security
+
+Database credentials should be kept private.
+
+The `application.properties` file contains database configuration and should not be uploaded to a public GitHub repository if it contains real passwords.
 
 ## Author
 
 **Nikala Yamuna**
 
 GitHub: https://github.com/NikalaYamuna
-
